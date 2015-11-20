@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">T-10 Scouting App</string>
+
+    <string name="hello_world">(By Davis Keene and Shaashwat Sharma)</string>
+    <string name="action_settings">Settings</string>
+    <string name="dropdown">Parked Dropdown</string>
+    <string name="Parked">Parked: </string>
+    <string-array name="brew_array">
+        <item>Yes</item>
+        <item>No</item>
+        <item>X</item>
+        <item>Y</item>
+        <item>Z</item>
+    </string-array>
+</resources>
+
