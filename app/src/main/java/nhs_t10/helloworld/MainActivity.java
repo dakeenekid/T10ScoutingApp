@@ -50,10 +50,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void writeData(View view) {
-        System.out.println("Writing data...");
+        System.out.println("Reading data...");
+        System.out.println("Writing to phone...");
         BufferedWriter bufferWriter = null;
         try {
-            FileOutputStream fileOutputStream = openFileOutput("testFile.txt", Context.MODE_PRIVATE);
+
+            FileOutputStream fileOutputStream = openFileOutput("z:\\testFile.txt", Context.MODE_PRIVATE);
 
             bufferWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream));
             bufferWriter.write(Boolean.toString(((Switch) this.findViewById(R.id.switch1)).isChecked()));
@@ -62,11 +64,13 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
 
+
         } finally {
             try {
                 bufferWriter.close();
             } catch (IOException e) {
                 e.printStackTrace();
+                System.out.println("Done!");
 
             }
 
