@@ -53,16 +53,22 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("Reading data...");
         System.out.println("Writing to phone...");
         BufferedWriter bufferWriter = null;
+        int i = (int) (Math.random()*10000);
         try {
 
-            FileOutputStream fileOutputStream = openFileOutput("z:\\testFile.txt", Context.MODE_PRIVATE);
+            FileOutputStream fileOutputStream = openFileOutput("ScoutingData" + i +".txt", Context.MODE_PRIVATE);
 
             bufferWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream));
             bufferWriter.write(Boolean.toString(((Switch) this.findViewById(R.id.switch1)).isChecked()));
+            bufferWriter.write(Boolean.toString(((Switch) this.findViewById(R.id.switch2)).isChecked()));
+            bufferWriter.write(R.id.spinner1);
+
+            System.out.println("Done!");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+
 
 
         } finally {
@@ -70,10 +76,28 @@ public class MainActivity extends AppCompatActivity {
                 bufferWriter.close();
             } catch (IOException e) {
                 e.printStackTrace();
-                System.out.println("Done!");
 
             }
 
         }
+        readData(i);
+    }
+
+    public void readData(int i) {
+        System.out.println("Reading data");
+        BufferedReader in;
+        try {
+            FileInputStream fis = openFileInput("ScoutingData" + i + ".txt");
+            in = new BufferedReader(new InputStreamReader(fis));
+            String input = "";
+            String f = "";
+            while ((input = in.readLine()) != null) {
+                f += input + "\n";
+            }
+            System.out.println(f);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
+

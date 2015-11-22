@@ -2,15 +2,19 @@
     <string name="app_name">T-10 Scouting App</string>
 
     <string name="hello_world">(By Davis Keene and Shaashwat Sharma)</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Main</string>
+    <string name="Credits">Credits</string>
     <string name="dropdown">Parked Dropdown</string>
     <string name="Parked">Parked: </string>
+    <string name="Submit">Submit</string>
+    <string name="Select">Debris? Floor: </string>
     <string-array name="brew_array">
-        <item>Yes</item>
-        <item>No</item>
-        <item>X</item>
-        <item>Y</item>
-        <item>Z</item>
+        <item>Parked:</item>
+        <item>Floor</item>
+        <item>Parking Zone</item>
+        <item>T1</item>
+        <item>T2</item>
+        <item>T3</item>
     </string-array>
 </resources>
 
