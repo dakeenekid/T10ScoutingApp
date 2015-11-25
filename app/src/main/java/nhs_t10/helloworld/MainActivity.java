@@ -7,7 +7,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Switch;
 
 import java.io.*;
@@ -61,7 +63,12 @@ public class MainActivity extends AppCompatActivity {
             bufferWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream));
             bufferWriter.write(Boolean.toString(((Switch) this.findViewById(R.id.switch1)).isChecked()));
             bufferWriter.write(Boolean.toString(((Switch) this.findViewById(R.id.switch2)).isChecked()));
-            bufferWriter.write(R.id.spinner1);
+            bufferWriter.write(Boolean.toString(((CheckBox) this.findViewById(R.id.checkBox)).isChecked()));
+            bufferWriter.write(Boolean.toString(((CheckBox) this.findViewById(R.id.checkBox2)).isChecked()));
+            bufferWriter.write(Boolean.toString(((CheckBox) this.findViewById(R.id.checkBox3)).isChecked()));
+            bufferWriter.write(Boolean.toString(((CheckBox) this.findViewById(R.id.checkBox4)).isChecked()));
+            bufferWriter.write(Boolean.toString(((CheckBox) this.findViewById(R.id.checkBox5)).isChecked()));
+
 
             System.out.println("Done!");
         } catch (FileNotFoundException e) {
